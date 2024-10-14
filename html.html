@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schnitzeljagd – Entschlüssle das Buch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #D0E4F5 url(shutterstock_1029441241-scaled.jpg) no-repeat fixed center center;
+            background-size: 90%; /* Hier kannst du die Größe des Bildes anpassen */
+            text-align: center;
+            padding-top: 40px;
+            padding: 50px;
+        }
+
+
+        h1 {
+            color: #333;
+        }
+
+        .qr-container {
+            margin: 20px 0;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 300px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>⭐</h1>
+    <p></p>
+
+    <!-- QR-Code zur Spotify-Playlist -->
+    <div class="qr-container">
+        <img src="qr-code.png" alt="QR Code zur Playlist" width="200">
+    </div>
+
+    <!-- Eingabefeld für den Code -->
+    <input type="text" id="songCode" placeholder="code">
+
+    <!-- Überprüfen-Button -->
+    <button onclick="checkCode()">Überprüfen</button>
+
+    <!-- Ergebnisanzeige -->
+    <div id="result"></div>
+
+    <script>
+        // Richtiger Code (Anfangsbuchstaben der Songs)
+        const correctCode = "supernova"; // Beispielsweise die Anfangsbuchstaben für '48 Laws of Power'
+
+        // Funktion zur Überprüfung des eingegebenen Codes
+        function checkCode() {
+            const userCode = document.getElementById('songCode').value.toLowerCase();
+
+            // Überprüfen, ob der eingegebene Code richtig ist
+            if (userCode === correctCode) {
+                document.getElementById('result').innerHTML = "suppa gmacht. https://www.youtube.com/watch?v=uQhcPPFgOM8&list=WL&index=106";
+            } else {
+                document.getElementById('result').innerHTML = "Falscher Code, versuch es nochmal.";
+            }
+        }
+    </script>
+
+</body>
+</html>
